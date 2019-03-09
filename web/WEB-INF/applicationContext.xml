@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <!-- Annotation driven -->
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.security.web.method.annotation.AuthenticationPrincipalArgumentResolver"/>
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+
+    <!-- Component scan -->
+    <context:component-scan base-package="main"/>
+    <context:component-scan base-package="member"/>
+    <context:component-scan base-package="article"/>
+    <context:component-scan base-package="project"/>
+    <context:component-scan base-package="security"/>
+
+    <!-- DB Properties -->
+    <bean
+            id="sessionFactory"
+            class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="configLocation">
+            <value>classpath:dbConfig/hibernate.cfg.xml</value>
+        </property>
+    </bean>
+
+</beans>

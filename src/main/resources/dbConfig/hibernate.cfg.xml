@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration SYSTEM
+  "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="hibernate.connection.provider_class">
+      org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+    </property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">
+      jdbc:postgresql://localhost:5432/project?serverTimezone=UTC
+    </property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">asdf1234</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+
+    <!-- Hibernate session context class-->
+    <property name="current_session_context_class">thread</property>
+
+    <!-- Show Sql
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>-->
+
+    <!-- DDL AUTO -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <!-- Lazy Load -->
+    <property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+    <!-- Mapping files -->
+    <mapping class="member.entity.Member"/>
+    <mapping class="article.entity.Article"/>
+    <mapping class="article.entity.ArticleReply"/>
+    <mapping class="article.entity.ArticleAttachFiles"/>
+    <mapping class="project.entity.Project"/>
+  </session-factory>
+
+</hibernate-configuration>
