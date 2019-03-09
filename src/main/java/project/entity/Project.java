@@ -28,13 +28,13 @@ public class Project {
   @Column
   private Long id;
 
-  @Column
+  @Column(length = 100)
   private String creator;
 
-  @Column
+  @Column(length = 20)
   private String name;
 
-  @Column
+  @Column(length = 15000)
   private String description;
 
   @CreationTimestamp

@@ -20,7 +20,7 @@ public class ArticleAttachFiles {
   @Column
   private Long Id;
 
-  @Column
+  @Column(length = 250)
   private String fileName;
 
   @CreationTimestamp
@@ -30,7 +30,7 @@ public class ArticleAttachFiles {
   @Column
   private String uploadPath;
 
-  @Column
+  @Column(length = 100)
   private String uuid;
 
   @Column

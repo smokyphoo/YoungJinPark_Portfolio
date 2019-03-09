@@ -23,10 +23,10 @@ public class ArticleReply {
   @Column
   private Long id;
 
-  @Column
+  @Column(length = 20)
   private String writer;
 
-  @Column
+  @Column(length = 500)
   private String comment;
 
   @CreationTimestamp
@@ -38,6 +38,5 @@ public class ArticleReply {
   @Temporal(TemporalType.TIMESTAMP)
   @Column
   private Date modifiedDate;
-
 
 }

@@ -27,13 +27,13 @@ public class Article {
   @Column
   private Long id;
 
-  @Column
+  @Column(length = 20)
   private String creator;
 
-  @Column
+  @Column(length = 100)
   private String title;
 
-  @Column
+  @Column(length = 15000)
   private String content;
 
   @CreationTimestamp

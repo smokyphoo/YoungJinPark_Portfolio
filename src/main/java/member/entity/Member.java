@@ -17,22 +17,22 @@ import project.entity.Project;
 public class Member {
 
   @Id
-  @Column
+  @Column(length = 100)
   private String email;
 
-  @Column
+  @Column(length = 100)
   private String password;
 
-  @Column
+  @Column(length = 20)
   private String nickname;
 
-  @Column
+  @Column(length = 40)
   private String company;
 
-  @Column
+  @Column(length = 40)
   private String position;
 
-  @Column
+  @Column(length = 40)
   private String signupRoles;
 
   @ManyToMany(cascade = CascadeType.ALL)
