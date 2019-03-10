@@ -19,7 +19,7 @@
   <logger name="org.hibernate.type.BasicTypeRegistry" level="WARN"/>-->
 
   <!-- Root Level -->
-  <root level="INFO">
+  <root level="WARN">
     <appender-ref ref="console"/>
   </root>
 

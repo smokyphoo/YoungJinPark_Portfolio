@@ -9,7 +9,7 @@
 
 C:/Users/X/Desktop/projects/projectmanager/web/WEB-INF/applicationContext.xml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/project?serverTimezone=UTC</jdbc-url>
+      <jdbc-url>jdbc:postgresql://aa1kjkqzg10e67c.cbqcwmh53x5s.us-east-2.rds.amazonaws.com:5432/project?serverTimezone=UTC</jdbc-url>
     </data-source>
   </component>
 </project>
