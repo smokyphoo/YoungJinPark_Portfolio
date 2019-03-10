@@ -20,7 +20,7 @@
                             <!-- 프로젝트 수정 시작 -->
                             <div class="box box-solid box-primary" style="height: 500px">
                                 <div class="box-header">
-                                    <h3 class="panel-title">${project.id}</h3>
+                                    <h3 class="panel-title">${project.name}</h3>
                                 </div>
                                 <div class="box-body" style="height: 80%">
                                     <form action="/project/${project.id}/modifyArticleProcess/" style="height: 100%">

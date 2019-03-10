@@ -28,7 +28,7 @@
                                             수정
                                         </a>
 
-                                        <a href="/${project.id}/${article.id}/modifyArticle/"
+                                        <a href="/project/${project.id}/${article.id}/deleteArticle/"
                                            class="btn btn-default pull-right">
                                             삭제
                                         </a>

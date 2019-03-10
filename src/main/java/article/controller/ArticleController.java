@@ -18,6 +18,7 @@ import member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -74,7 +75,7 @@ public class ArticleController {
   public String registryArticleProcess(@PathVariable Long projectId,
       @RequestParam("title") String title,
       @RequestParam("content") String content,
-      Principal principal) {
+      @AuthenticationPrincipal Principal principal) {
 
     Project project = projectService.findByProjectId(projectId);
     Article article = new Article();
@@ -165,7 +166,7 @@ public class ArticleController {
    */
   @RequestMapping("/{projectId}/{articleId}/getArticle")
   public String getArticleById(@PathVariable Long projectId, @PathVariable Long articleId,
-      Principal principal, Model projectModel, Model articleModel, Model articleRepliesModel,
+      @AuthenticationPrincipal Principal principal, Model projectModel, Model articleModel, Model articleRepliesModel,
       Model isCreator, Model memberModel) {
 
     Project project = projectService.findByProjectId(projectId);

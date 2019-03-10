@@ -1,6 +1,7 @@
 package project.controller;
 
 import article.entity.ArticleAttachFiles;
+import com.amazonaws.services.s3.AmazonS3;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -15,6 +16,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,7 +69,7 @@ public class ProjectController {
    */
   @RequestMapping("/registerProjectProcess")
   public String registryArticleProcess(@RequestParam("name") String name,
-      @RequestParam("description") String description, Principal principal) {
+      @RequestParam("description") String description,@AuthenticationPrincipal Principal principal) {
 
     Member member = memberService.findMemberByEmail(principal.getName());
     Project project = new Project();
@@ -118,12 +120,10 @@ public class ProjectController {
           System.out.println("zipFileName" + zipFileName);
         }
         index.setUploadPath(confirmedFilesPath);
+        list = (ArrayList<ArticleAttachFiles>) fileUtil.getAllFilesInFolders(confirmedFilesPath);
+
+        project.setAttachFilesList(list);
       }
-
-      list = (ArrayList<ArticleAttachFiles>) fileUtil.getAllFilesInFolders(confirmedFilesPath);
-
-      project.setAttachFilesList(list);
-
     }
 
     List<Project> memberHasFollowedProjectList = member.getFollowedProjectList();
@@ -145,6 +145,8 @@ public class ProjectController {
   @PostMapping(value = "/upload")
   @ResponseBody
   public ResponseEntity<List<ArticleAttachFiles>> uploadAjaxPost(MultipartFile[] uploadFile) {
+
+
 
     String uploadFolder = "c:\\upload\\project";
     File uploadPath = new File(uploadFolder);
@@ -214,8 +216,8 @@ public class ProjectController {
     프로젝트 글 읽기
    */
   @RequestMapping("/{projectId}/getProject")
-  public String getProjectById(@PathVariable Long projectId,
-      Principal principal, Model projectModel, Model principalModel, Model followModel) {
+  public String getProjectById(@PathVariable Long projectId,@AuthenticationPrincipal Principal principal,
+      Model projectModel, Model principalModel, Model followModel) {
 
     Project project = projectService.findByProjectId(projectId);
 
@@ -242,7 +244,7 @@ public class ProjectController {
     프로젝트 검색
    */
   @RequestMapping("/search")
-  public String getArticleSearch(@RequestParam("keyword") String keyword,Principal principal, Model projectsModel,Model memberModel) {
+  public String getArticleSearch(@RequestParam("keyword") String keyword,@AuthenticationPrincipal Principal principal, Model projectsModel,Model memberModel) {
 
     Member member = memberService.findMemberByEmail(principal.getName());
 

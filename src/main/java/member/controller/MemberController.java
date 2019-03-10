@@ -5,6 +5,7 @@ import member.entity.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -99,7 +100,7 @@ public class MemberController {
     회원의 프로젝트 팔로우 리스트
    */
   @RequestMapping("followList")
-  public String memberFollowList(Principal principal,Model memberModel){
+  public String memberFollowList(@AuthenticationPrincipal Principal principal,Model memberModel){
 
     Member member = memberService.findMemberByEmail(principal.getName());
 
@@ -113,7 +114,7 @@ public class MemberController {
     회원 정보 수정페이지
    */
   @RequestMapping("modifyMember")
-  public String modifyMember(Principal principal, Model model) {
+  public String modifyMember(@AuthenticationPrincipal Principal principal, Model model) {
 
     Member member = memberService.findMemberByEmail(principal.getName());
 
@@ -148,7 +149,7 @@ public class MemberController {
     회원 삭제
    */
   @RequestMapping("deleteMemberProcess")
-  public String deleteMemberProcess(Principal principal) {
+  public String deleteMemberProcess(@AuthenticationPrincipal Principal principal) {
 
     memberService.deleteMember(principal.getName());
     SecurityContextHolder.getContext().getAuthentication().setAuthenticated(false);

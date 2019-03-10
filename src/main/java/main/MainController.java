@@ -5,6 +5,7 @@ import java.util.List;
 import member.entity.Member;
 import member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,14 +22,22 @@ public class MainController {
     메인 페이지
    */
   @RequestMapping("/")
-  public String main(Principal principal, Model projectModel) {
+  public String main(@AuthenticationPrincipal Principal principal, Model projectModel) {
 
-    Member member = memberService.findMemberByEmail(principal.getName());
-    List<Project> projects = memberService.sortingFollowProjectList(member.getNickname());
+    if (!principal.getName().equals(null)) {
 
-    projectModel.addAttribute("projects",projects);
+      Member member = memberService.findMemberByEmail(principal.getName());
+      List<Project> projects = memberService.sortingFollowProjectList(member.getNickname());
 
-    return "/main/main";
+      projectModel.addAttribute("projects", projects);
+
+      return "/main/main";
+
+    }else {
+
+      return "/sign/signin";
+
+    }
 
   }
 

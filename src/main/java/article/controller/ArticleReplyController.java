@@ -9,6 +9,7 @@ import java.util.List;
 import member.entity.Member;
 import member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,7 +35,7 @@ public class ArticleReplyController {
   @RequestMapping("/{projectId}/{articleId}/registerArticleReplyProcess/")
   public String registryArticleProcess(@PathVariable Long projectId,
       @PathVariable Long articleId,
-      @RequestParam String commentData, Principal principal) {
+      @RequestParam String commentData, @AuthenticationPrincipal Principal principal) {
 
     Article article = articleService.findByArticleId(articleId);
     ArticleReply articleReply = new ArticleReply();

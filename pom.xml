@@ -184,6 +184,15 @@
       <artifactId>zip4j</artifactId>
       <version>1.3.2</version>
     </dependency>
+
+    <!-- Amazon S3 -->
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-s3</artifactId>
+      <version>1.11.515</version>
+    </dependency>
+
+
   </dependencies>
 
 </project>

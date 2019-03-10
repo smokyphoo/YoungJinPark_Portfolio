@@ -9,6 +9,7 @@
   <mvc:resources mapping="/view_resources/sign/**" location="/view_resources/sign/"/>
   <mvc:resources mapping="/view_resources/textDiff/**" location="/view_resources/textDiff/"/>
   <mvc:resources mapping="/view_resources/filepond/**" location="/view_resources/filepond/"/>
+
   <!-- Multipart Resolver -->
   <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 
