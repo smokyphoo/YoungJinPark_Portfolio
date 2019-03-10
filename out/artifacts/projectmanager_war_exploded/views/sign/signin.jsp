@@ -3,7 +3,7 @@
 <html>
 <head>
     <security:authorize access="isAuthenticated()">
-        <% response.sendRedirect("/"); %>
+        <% response.sendRedirect("/main"); %>
     </security:authorize>
     <link rel="stylesheet" href="/view_resources/sign/main.css">
     <link rel="stylesheet"

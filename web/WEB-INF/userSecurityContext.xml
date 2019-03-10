@@ -17,7 +17,7 @@
       login-processing-url="/login"
       username-parameter="email"
       password-parameter="password"
-      default-target-url="/"
+      default-target-url="/main"
       authentication-failure-url="/signin"
     />
 

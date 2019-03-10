@@ -21,24 +21,21 @@ public class MainController {
   /*
     메인 페이지
    */
-  @RequestMapping("/")
+  @RequestMapping("/main")
   public String main(@AuthenticationPrincipal Principal principal, Model projectModel) {
 
-    if (!principal.getName().equals(null)) {
+    Member member = memberService.findMemberByEmail(principal.getName());
+    List<Project> projects = memberService.sortingFollowProjectList(member.getNickname());
 
-      Member member = memberService.findMemberByEmail(principal.getName());
-      List<Project> projects = memberService.sortingFollowProjectList(member.getNickname());
+    projectModel.addAttribute("projects", projects);
 
-      projectModel.addAttribute("projects", projects);
+    return "/main/main";
 
-      return "/main/main";
+  }
 
-    }else {
-
-      return "/sign/signin";
-
-    }
-
+  @RequestMapping("/")
+  public String nullPage() {
+    return "/sign/signin";
   }
 
 }

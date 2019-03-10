@@ -19,7 +19,7 @@
       <ObjectId>16406</ObjectId>
       <StateNumber>622</StateNumber>
       <Owner>root</Owner>
-      <IntrospectionStateNumber>785</IntrospectionStateNumber>
+      <IntrospectionStateNumber>829</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
@@ -143,7 +143,7 @@ search_path=pg_catalog, public</Config>
       <Comment>standard public schema</Comment>
       <StateNumber>592</StateNumber>
       <Owner>root</Owner>
-      <IntrospectionStateNumber>786</IntrospectionStateNumber>
+      <IntrospectionStateNumber>830</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
