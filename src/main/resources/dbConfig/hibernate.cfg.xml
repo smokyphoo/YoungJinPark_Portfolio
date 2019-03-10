@@ -11,7 +11,7 @@
     </property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.connection.url">
-      jdbc:postgresql://aa1kjkqzg10e67c.cbqcwmh53x5s.us-east-2.rds.amazonaws.com:5432/project?serverTimezone=UTC
+      jdbc:postgresql://aa1j82zljryxqqe.ckwxxdvgmzwx.ap-northeast-2.rds.amazonaws.com:5432/project
     </property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">asdf1234</property>
