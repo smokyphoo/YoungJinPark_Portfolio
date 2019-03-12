@@ -43,7 +43,7 @@ public class Project {
 
   @UpdateTimestamp
   @Column
-  private Date updated;
+  private Date modifiedDate;
 
   @OneToMany(cascade = CascadeType.ALL)
   List<Article> articlesList;

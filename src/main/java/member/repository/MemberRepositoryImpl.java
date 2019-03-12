@@ -103,7 +103,7 @@ public class MemberRepositoryImpl implements MemberRepository {
   public List<Project> sortingFollowProjectList(String nickname) {
       Session session = sessionFactory.getCurrentSession();
       session.beginTransaction();
-      Query query = session.createQuery("select followList from Member memberVar inner join memberVar.followedProjectList followList where memberVar.nickname =: nickname order by followList.updated desc");
+      Query query = session.createQuery("select followList from Member memberVar inner join memberVar.followedProjectList followList where memberVar.nickname =: nickname order by followList.modifiedDate desc");
       query.setParameter("nickname",nickname);
       List<Project> projects = query.list();
       session.getTransaction().commit();
