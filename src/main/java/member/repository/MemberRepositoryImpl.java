@@ -99,6 +99,9 @@ public class MemberRepositoryImpl implements MemberRepository {
     session.getTransaction().commit();
   }
 
+  /*
+    회원의 팔로우 리스트
+   */
   @Override
   public List<Project> sortingFollowProjectList(String nickname) {
       Session session = sessionFactory.getCurrentSession();
