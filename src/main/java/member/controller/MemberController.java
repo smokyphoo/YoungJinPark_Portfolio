@@ -113,7 +113,7 @@ public class MemberController {
   /*
     회원 정보 수정페이지
    */
-  @RequestMapping("modifyMember")
+  @RequestMapping("/modifyMember")
   public String modifyMember(@AuthenticationPrincipal Principal principal, Model model) {
 
     Member member = memberService.findMemberByEmail(principal.getName());
@@ -126,7 +126,7 @@ public class MemberController {
   /*
     회원 정보 수정
    */
-  @RequestMapping("modifyMemberProcess")
+  @RequestMapping("/modifyMemberProcess")
   public String modifyMemberProcess(Principal principal, @RequestParam("nickname") String nickname,
       @RequestParam("company") String company, @RequestParam("position") String position) {
 
@@ -148,7 +148,7 @@ public class MemberController {
   /*
     회원 삭제
    */
-  @RequestMapping("deleteMemberProcess")
+  @RequestMapping("/deleteMemberProcess")
   public String deleteMemberProcess(@AuthenticationPrincipal Principal principal) {
 
     memberService.deleteMember(principal.getName());

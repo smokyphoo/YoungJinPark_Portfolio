@@ -20,7 +20,7 @@
                             <div class="box box-solid box-primary">
                                 <!-- 프로젝트 이름 시작 -->
                                 <div class="box-header">
-                                    프로젝트 등록
+                                    요청글 등록
                                 </div>
                                 <!-- 프로젝트 이름 끝 -->
                                 <form action="/project/${project.id}/registerArticleProcess">

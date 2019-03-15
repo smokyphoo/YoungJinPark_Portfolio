@@ -34,8 +34,8 @@
                                autofocus/>
 
                     </div>
-                    <button a href="/deleteMemberProcess" class="btn btn-default">회원 탈퇴
-                    </button><br><br><br>
+                    <a href="/deleteMemberProcess" class="btn btn-default">회원 탈퇴
+                    </a><br><br><br>
 
                     <button type="submit" class="btn btn-default" id="submitBtn">확인</button>
                     <button a href="/" class="btn btn-default">취소</button>

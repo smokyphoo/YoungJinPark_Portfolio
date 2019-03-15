@@ -99,10 +99,8 @@ public class ProjectController {
 
         String beforeMoveFilePath =
             index.getUploadPath() + "\\" + index.getFileName();
-        System.out.println("beforeMoveFilePath " + beforeMoveFilePath);
         String afterMoveFilePath = confirmedFilesPath + "\\" + index
             .getFileName();
-        System.out.println("afterMoveFilePath " + afterMoveFilePath);
         File beforeMoveFile = new File(beforeMoveFilePath);
         File afterMoveFile = new File(afterMoveFilePath);
         beforeMoveFile.renameTo(afterMoveFile);
@@ -117,7 +115,6 @@ public class ProjectController {
           File moveToConfirmedVersionFolder = new File(
               confirmedVersionPath + "\\" + project.getName() + ".zip");
           afterMoveFile.renameTo(moveToConfirmedVersionFolder);
-          System.out.println("zipFileName" + zipFileName);
         }
         index.setUploadPath(confirmedFilesPath);
         list = (ArrayList<ArticleAttachFiles>) fileUtil.getAllFilesInFolders(confirmedFilesPath);

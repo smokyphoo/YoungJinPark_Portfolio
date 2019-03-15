@@ -248,13 +248,14 @@ public class ArticleController {
       tracking++;
     }
 
+    project.getArticlesList().get(result).getAttachFiles().clear();
+    project.getArticlesList().get(result).getArticleReplies().clear();
     project.getArticlesList().remove(result);
 
     projectService.updateProject(project);
-    articleService.updateArticle(article);
     articleService.deleteArticle(articleId);
 
-    return "redirect:/project/" + project.getId() + "/" + article.getId() + "/getArticle";
+    return "redirect:/project/" + project.getId() + "/getProject";
 
   }
 

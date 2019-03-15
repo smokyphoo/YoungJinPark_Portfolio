@@ -53,7 +53,7 @@
                                     <!-- 다운로드 파일 버튼 시작 -->
                                     <c:if test="${project.attachFilesList.size()!=0}">
                                         <a class="btn pull-right btn-default"
-                                           href="/project/download?fileName=${project.id}/confirmedVersion/${project.id}.zip">
+                                           href="/project/download?fileName=${project.name}/confirmedVersion/${project.name}.zip">
                                             다운로드</a>
                                     </c:if>
                                     <!-- 다운로드 파일 버튼 끝 -->

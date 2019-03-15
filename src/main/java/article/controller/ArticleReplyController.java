@@ -47,7 +47,6 @@ public class ArticleReplyController {
     articleReplies.add(articleReply);
 
     articleService.updateArticle(article);
-    articleReplyService.saveArticleReply(articleReply);
 
     return "redirect:/project/" + projectId + "/" + article.getId() + "/getArticle";
 
