@@ -8,7 +8,7 @@
 <body class="hold-transition skin-blue">
 
 <div class="wrapper">
-    <%@ include file="/views/main_include/side_menubar.jsp"%>
+    <%@ include file="/views/main_include/side_menubar.jsp" %>
     <%@include file="/views/main_include/main_header.jsp" %>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -32,21 +32,22 @@
                                                 ${projects.name}</a>
                                     </td>
                                     <td class="pull-right">
-                                        ${projects.modifiedDate.toGMTString()}
+                                            ${projects.modifiedDate.toGMTString()}
                                     </td>
                                 </tr>
                             </c:forEach>
                         </table>
-                        <a href="/project/registerProject">프로젝트 등록</a>
                     </div>
                 </div>
+                <a href="/project/registerProject" class="btn btn-default pull-right bottom-right">프로젝트
+                    등록</a>
             </div>
         </section>
         <!-- /.content -->
     </div>
     <%@include file="/views/main_include/footer.jsp" %>
 </div>
-<%@include file="/views/main_include/plugin_js.jsp"%>
+<%@include file="/views/main_include/plugin_js.jsp" %>
 </body>
 <script>
   $(function () {

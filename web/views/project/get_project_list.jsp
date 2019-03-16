@@ -37,13 +37,11 @@
                             </table>
                         </div>
                         <!-- 프로젝트 목록 끝 -->
-                        <footer>
-                            <a href="/project/registerProject" class="btn btn-default pull-right">
-                                글 등록
-                            </a>
-                        </footer>
                     </div>
                     <!-- 프로젝트 목록 내용 끝-->
+                    <a href="/project/registerProject" class="btn btn-default pull-right">
+                        프로젝트 등록
+                    </a>
                 </div>
                 <!-- 프로젝트 목록 끝 -->
             </div>
