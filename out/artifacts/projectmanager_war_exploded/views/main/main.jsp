@@ -32,7 +32,7 @@
                                                 ${projects.name}</a>
                                     </td>
                                     <td class="pull-right">
-                                        ${projects.updated.toGMTString()}
+                                        ${projects.modifiedDate.toGMTString()}
                                     </td>
                                 </tr>
                             </c:forEach>

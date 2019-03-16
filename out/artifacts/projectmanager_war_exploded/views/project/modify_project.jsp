@@ -31,10 +31,10 @@
                                         </footer>
                                     </form>
                                 </div>
+                                <a href="/project/${project.id}/getProject" class="btn btn-default">프로젝트로 가기</a>
                             </div>
                             <!-- 글 프로젝트 끝 -->
                         </div>
-                        <a href="/project/${project.id}/getProject" class="btn btn-default">프로젝트로 가기</a>
                         <!--글 끝 -->
                     </div>
                 </div>

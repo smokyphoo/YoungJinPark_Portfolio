@@ -37,6 +37,7 @@
                                 </tr>
                             </c:forEach>
                         </table>
+                        <a href="/project/registerProject">프로젝트 등록</a>
                     </div>
                 </div>
             </div>

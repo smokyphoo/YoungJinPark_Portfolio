@@ -40,9 +40,10 @@
                                 <c:if test="${article.attachFiles.size() != 0}">
                                     <c:forEach items="${article.attachFiles}" var="attaches">
                                         <a href="/project/${project.id}/${article.id}/${attaches.id}/${attaches.fileName}">${attaches.fileName}</a>
+                                        <c:if test="${project.creator eq member.email}">
                                         <a href="/project/${project.id}/${article.id}/${attaches.id}/${attaches.fileName}/confirm"
                                            class="btn btn-default">확인
-                                        </a>
+                                        </a></c:if>
                                         <a href="/project/download?fileName=${project.id}/${attaches.uuid}_${attaches.fileName}"
                                            class="btn btn-default">다운로드
                                         </a>
@@ -85,7 +86,7 @@
                                       name="replyForm">
                                     <textarea class="form-control" name="commentData" cols="20"
                                               rows="10"></textarea>
-                                    <button type="submit" class="btn btn-default">
+                                    <button type="submit" class="btn btn-default pull-right">
                                         전송
                                     </button>
                                 </form>
